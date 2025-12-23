@@ -20,7 +20,7 @@ struct WorkoutDetailsView: View {
                     .bold()
 
                 infoRow(title: "Type", value: workout.type ?? "")
-                infoRow(title: "Duration", value: "\(workout.duration) min")
+                infoRow(title: "Duration", value: "\(workout.duration!) min")
                 infoRow(title: "Distance", value: "\(workout.distance, default: "%.1f") km")
 
                 if let heartRate = workout.heartRateData {

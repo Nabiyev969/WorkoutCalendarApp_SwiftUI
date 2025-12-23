@@ -15,15 +15,15 @@ struct DayView: View {
     let hasWorkout: Bool
 
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 6) {
             Text(dayNumber())
-                .font(.body)
-                .fontWeight(isToday ? .bold : .regular)
-                .foregroundColor(isSelected ? .white : .primary)
+                .font(.subheadline)
+                .fontWeight(isToday ? .semibold : .regular)
+                .foregroundColor(textColor)
                 .frame(width: 36, height: 36)
                 .background(
                     Circle()
-                        .fill(isSelected ? Color.blue : Color.clear)
+                        .fill(backgroundColor)
                 )
 
             if hasWorkout {
@@ -32,6 +32,20 @@ struct DayView: View {
                     .frame(width: 6, height: 6)
             }
         }
+    }
+    
+    private var backgroundColor: Color {
+        if isSelected {
+            return Color.accentColor
+        } else if isToday {
+            return Color.accentColor.opacity(0.2)
+        } else {
+            return Color.clear
+        }
+    }
+    
+    private var textColor: Color {
+        isSelected ? .white : .primary
     }
 
     private func dayNumber() -> String {

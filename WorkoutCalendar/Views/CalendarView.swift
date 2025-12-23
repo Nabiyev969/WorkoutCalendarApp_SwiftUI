@@ -18,18 +18,27 @@ struct CalendarView: View {
         VStack(spacing: 16) {
             
             HStack {
-                Button(action: viewModel.goToPreviousMonth) {
+                Button(action: {
+                    withAnimation {
+                        viewModel.goToPreviousMonth()
+                    }
+                }) {
                     Image(systemName: "chevron.left")
                 }
                 
                 Spacer()
                 
                 Text(viewModel.monthTitle())
-                    .font(.headline)
+                    .font(.title3)
+                    .fontWeight(.semibold)
                 
                 Spacer()
                 
-                Button(action: viewModel.goToNextMonth) {
+                Button(action: {
+                    withAnimation {
+                        viewModel.goToNextMonth()
+                    }
+                }) {
                     Image(systemName: "chevron.right")
                 }
             }
@@ -56,21 +65,22 @@ struct CalendarView: View {
                 Button {
                     coordinator.showWorkoutDetails(workout)
                 } label: {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text(workout.title ?? "")
                             .font(.headline)
                         
-                        Text("\(workout.type) • \(workout.duration) min • \(workout.distance ?? 0, specifier: "%.1f") km")
-                            .font(.subheadline)
+                        Text("\(workout.type ?? "") • \(workout.duration ?? 0) min • \(workout.distance ?? 0, specifier: "%.1f") km")
+                            .font(.caption)
                             .foregroundColor(.secondary)
                     }
+                    .padding(.vertical, 8)
                 }
             }
         }
+        .listStyle(.plain)
         .navigationDestination(for: WorkoutEvent.self) { workout in
-//            WorkoutDetailsView(workout: workout)
+            WorkoutDetailsView(workout: workout)
         }
-        .navigationTitle("Calendar")
     }
 }
 
