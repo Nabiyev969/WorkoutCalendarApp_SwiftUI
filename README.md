@@ -18,5 +18,4 @@ Features:	Monthly calendar view,
           Navigation handled via Coordinator, 
           Mock data layer simulating server responses.
 
-Unit tests cover: filtering workouts by selected day,
-                  month navigation logic.
+Unit tests cover: Unit tests cover calendar logic, workout filtering, JSON parsing, and navigation logic.
