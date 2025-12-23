@@ -16,17 +16,22 @@ final class CalendarViewModel: ObservableObject {
     
     private let calendar = Calendar.current
     
-    init() {
-        let service = MockWorkoutService()
+    init(service: MockWorkoutService = MockWorkoutService()) {
         self.workouts = service.fetchWorkoutList()
     }
     
     func goToNextMonth() {
-        currentMonth = calendar.date(byAdding: .month, value: 1, to: currentMonth)!
+        guard let nextMonth = calendar.date(byAdding: .month, value: 1, to: currentMonth) else {
+            return
+        }
+        currentMonth = nextMonth
     }
     
     func goToPreviousMonth() {
-        currentMonth = calendar.date(byAdding: .month, value: -1, to: currentMonth)!
+        guard let previousMonth = calendar.date(byAdding: .month, value: -1, to: currentMonth) else {
+                return
+            }
+            currentMonth = previousMonth
     }
 
     func daysInMonth() -> [Date] {

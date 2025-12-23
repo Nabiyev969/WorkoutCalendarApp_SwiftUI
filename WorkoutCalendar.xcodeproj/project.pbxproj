@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		88B2D0072EFB06BB004793B8 /* PBXContainerItemProxy */ = {
+		88E7BA6D2EFB2F4F00117E3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88B2CFCE2EF9C62C004793B8 /* Project object */;
 			proxyType = 1;
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		88B2CFD62EF9C62C004793B8 /* WorkoutCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		88B2D0032EFB06BB004793B8 /* TrainingCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E7BA692EFB2F4F00117E3C /* WorkoutCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -27,7 +27,7 @@
 			path = WorkoutCalendar;
 			sourceTree = "<group>";
 		};
-		88B2D0042EFB06BB004793B8 /* WorkoutCalendarTests */ = {
+		88E7BA6A2EFB2F4F00117E3C /* WorkoutCalendarTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WorkoutCalendarTests;
 			sourceTree = "<group>";
@@ -42,7 +42,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88B2D0002EFB06BB004793B8 /* Frameworks */ = {
+		88E7BA662EFB2F4F00117E3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				88B2CFD82EF9C62C004793B8 /* WorkoutCalendar */,
-				88B2D0042EFB06BB004793B8 /* WorkoutCalendarTests */,
+				88E7BA6A2EFB2F4F00117E3C /* WorkoutCalendarTests */,
 				88B2CFD72EF9C62C004793B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				88B2CFD62EF9C62C004793B8 /* WorkoutCalendar.app */,
-				88B2D0032EFB06BB004793B8 /* TrainingCalendarTests.xctest */,
+				88E7BA692EFB2F4F00117E3C /* WorkoutCalendarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,27 +95,27 @@
 			productReference = 88B2CFD62EF9C62C004793B8 /* WorkoutCalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		88B2D0022EFB06BB004793B8 /* TrainingCalendarTests */ = {
+		88E7BA682EFB2F4F00117E3C /* WorkoutCalendarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88B2D0092EFB06BB004793B8 /* Build configuration list for PBXNativeTarget "TrainingCalendarTests" */;
+			buildConfigurationList = 88E7BA6F2EFB2F4F00117E3C /* Build configuration list for PBXNativeTarget "WorkoutCalendarTests" */;
 			buildPhases = (
-				88B2CFFF2EFB06BB004793B8 /* Sources */,
-				88B2D0002EFB06BB004793B8 /* Frameworks */,
-				88B2D0012EFB06BB004793B8 /* Resources */,
+				88E7BA652EFB2F4F00117E3C /* Sources */,
+				88E7BA662EFB2F4F00117E3C /* Frameworks */,
+				88E7BA672EFB2F4F00117E3C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				88B2D0082EFB06BB004793B8 /* PBXTargetDependency */,
+				88E7BA6E2EFB2F4F00117E3C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				88B2D0042EFB06BB004793B8 /* WorkoutCalendarTests */,
+				88E7BA6A2EFB2F4F00117E3C /* WorkoutCalendarTests */,
 			);
-			name = TrainingCalendarTests;
+			name = WorkoutCalendarTests;
 			packageProductDependencies = (
 			);
-			productName = TrainingCalendarTests;
-			productReference = 88B2D0032EFB06BB004793B8 /* TrainingCalendarTests.xctest */;
+			productName = WorkoutCalendarTests;
+			productReference = 88E7BA692EFB2F4F00117E3C /* WorkoutCalendarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -131,7 +131,7 @@
 					88B2CFD52EF9C62C004793B8 = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
-					88B2D0022EFB06BB004793B8 = {
+					88E7BA682EFB2F4F00117E3C = {
 						CreatedOnToolsVersion = 26.1.1;
 						TestTargetID = 88B2CFD52EF9C62C004793B8;
 					};
@@ -152,7 +152,7 @@
 			projectRoot = "";
 			targets = (
 				88B2CFD52EF9C62C004793B8 /* WorkoutCalendar */,
-				88B2D0022EFB06BB004793B8 /* TrainingCalendarTests */,
+				88E7BA682EFB2F4F00117E3C /* WorkoutCalendarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -165,7 +165,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88B2D0012EFB06BB004793B8 /* Resources */ = {
+		88E7BA672EFB2F4F00117E3C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,7 +182,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88B2CFFF2EFB06BB004793B8 /* Sources */ = {
+		88E7BA652EFB2F4F00117E3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -192,10 +192,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		88B2D0082EFB06BB004793B8 /* PBXTargetDependency */ = {
+		88E7BA6E2EFB2F4F00117E3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88B2CFD52EF9C62C004793B8 /* WorkoutCalendar */;
-			targetProxy = 88B2D0072EFB06BB004793B8 /* PBXContainerItemProxy */;
+			targetProxy = 88E7BA6D2EFB2F4F00117E3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,7 +395,7 @@
 			};
 			name = Release;
 		};
-		88B2D00A2EFB06BB004793B8 /* Debug */ = {
+		88E7BA702EFB2F4F00117E3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -404,7 +404,7 @@
 				DEVELOPMENT_TEAM = YZMY3Y8JU7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nabiyev969.TrainingCalendarTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nabiyev969.WorkoutCalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -416,7 +416,7 @@
 			};
 			name = Debug;
 		};
-		88B2D00B2EFB06BB004793B8 /* Release */ = {
+		88E7BA712EFB2F4F00117E3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -425,7 +425,7 @@
 				DEVELOPMENT_TEAM = YZMY3Y8JU7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nabiyev969.TrainingCalendarTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nabiyev969.WorkoutCalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -458,11 +458,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88B2D0092EFB06BB004793B8 /* Build configuration list for PBXNativeTarget "TrainingCalendarTests" */ = {
+		88E7BA6F2EFB2F4F00117E3C /* Build configuration list for PBXNativeTarget "WorkoutCalendarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88B2D00A2EFB06BB004793B8 /* Debug */,
-				88B2D00B2EFB06BB004793B8 /* Release */,
+				88E7BA702EFB2F4F00117E3C /* Debug */,
+				88E7BA712EFB2F4F00117E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
