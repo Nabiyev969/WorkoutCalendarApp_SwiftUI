@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct WorkoutDiagramResponse: Codable {
+struct WorkoutDiagramRoot: Codable {
+    let workouts: [String: WorkoutDiagramWorkout]
+}
+
+struct WorkoutDiagramWorkout: Codable {
     let data: [WorkoutDiagramPoint]
 }
 

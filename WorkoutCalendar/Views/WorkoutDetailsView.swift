@@ -37,10 +37,6 @@ struct WorkoutDetailsView: View {
                 }
 
                 if !viewModel.diagramData.isEmpty {
-                    Divider()
-                    Text("Heart Rate")
-                        .font(.headline)
-
                     HeartRateChartView(
                         data: viewModel.diagramData.map { $0.heartRate }
                     )

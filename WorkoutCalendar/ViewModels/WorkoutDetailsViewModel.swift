@@ -24,5 +24,7 @@ final class WorkoutDetailsViewModel: ObservableObject {
     private func load() {
         metadata = service.fetchMetadata(workoutKey: workoutKey)
         diagramData = service.fetchDiagramData(workoutKey: workoutKey)
+        
+        print("diagram points:", diagramData.count)
     }
 }
