@@ -7,17 +7,21 @@
 
 import Foundation
 
-protocol WorkoutServiceProtocol {
-    func fetchWorkouts() -> [WorkoutEvent]
+struct WorkoutListResponse: Codable {
+    let data: [WorkoutListItem]
 }
 
-final class MockWorkoutService: WorkoutServiceProtocol {
-    
-    func fetchWorkouts() -> [WorkoutEvent] {
-        return [
-            WorkoutEvent(
-                id: UUID(), date: Date(), title: "Morning Run", type: "Running", duration: 45, distance: 7.2, heartRateData: [120, 125, 130, 128, 135]
-            )
-        ]
+final class MockWorkoutService {
+
+    func fetchWorkoutList() -> [WorkoutListItem] {
+        guard
+            let url = Bundle.main.url(forResource: "list_workouts", withExtension: "json"),
+            let data = try? Data(contentsOf: url),
+            let response = try? JSONDecoder().decode(WorkoutListResponse.self, from: data)
+        else {
+            return []
+        }
+
+        return response.data
     }
 }

@@ -12,14 +12,13 @@ final class CalendarViewModel: ObservableObject {
     
     @Published var currentMonth: Date = Date()
     @Published var selectedDate: Date = Date()
-    @Published var workouts: [WorkoutEvent] = []
+    @Published var workouts: [WorkoutListItem] = []
     
-    private let service: WorkoutServiceProtocol
     private let calendar = Calendar.current
     
-    init(service: WorkoutServiceProtocol = MockWorkoutService()) {
-        self.service = service
-        self.workouts = service.fetchWorkouts()
+    init() {
+        let service = MockWorkoutService()
+        self.workouts = service.fetchWorkoutList()
     }
     
     func goToNextMonth() {
@@ -50,13 +49,13 @@ final class CalendarViewModel: ObservableObject {
     
     func hasWorkout(on date: Date) -> Bool {
         workouts.contains {
-            calendar.isDate($0.date ?? Date(), inSameDayAs: date)
+            calendar.isDate($0.startDate, inSameDayAs: date)
         }
     }
     
-    func workoutsForSelectedDay() -> [WorkoutEvent] {
+    func workoutsForSelectedDay() -> [WorkoutListItem] {
         workouts.filter {
-            calendar.isDate($0.date ?? Date(), inSameDayAs: selectedDate)
+            calendar.isDate($0.startDate, inSameDayAs: selectedDate)
         }
     }
     

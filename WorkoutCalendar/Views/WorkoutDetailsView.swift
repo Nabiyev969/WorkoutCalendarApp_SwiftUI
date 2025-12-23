@@ -9,34 +9,50 @@ import SwiftUI
 
 struct WorkoutDetailsView: View {
 
-    let workout: WorkoutEvent
+    @StateObject private var viewModel: WorkoutDetailsViewModel
 
+        init(workoutKey: String) {
+            _viewModel = StateObject(
+                wrappedValue: WorkoutDetailsViewModel(workoutKey: workoutKey)
+            )
+        }
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
 
-                Text(workout.title ?? "")
-                    .font(.largeTitle)
-                    .bold()
+                if let meta = viewModel.metadata {
+                    Text(meta.workoutActivityType)
+                        .font(.largeTitle)
+                        .bold()
 
-                infoRow(title: "Type", value: workout.type ?? "")
-                infoRow(title: "Duration", value: "\(workout.duration!) min")
-                infoRow(title: "Distance", value: "\(workout.distance, default: "%.1f") km")
+                    infoRow(title: "Distance", value: "\(meta.distance) m")
+                    infoRow(title: "Duration", value: "\(Int(Double(meta.duration) ?? 0) / 60) min")
 
-                if let heartRate = workout.heartRateData {
+                    if let comment = meta.comment {
+                        Divider()
+                        Text(comment)
+                            .foregroundColor(.secondary)
+                    }
+                }
+
+                if !viewModel.diagramData.isEmpty {
                     Divider()
                     Text("Heart Rate")
                         .font(.headline)
 
-                    HeartRateChartView(data: heartRate)
-                        .frame(height: 200)
+                    HeartRateChartView(
+                        data: viewModel.diagramData.map { $0.heartRate }
+                    )
+                    .frame(height: 200)
                 }
             }
             .padding()
         }
         .navigationTitle("Workout Details")
+        .navigationBarTitleDisplayMode(.inline)
     }
-
+    
     private func infoRow(title: String, value: String) -> some View {
         HStack {
             Text(title)

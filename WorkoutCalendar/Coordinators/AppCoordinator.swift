@@ -11,7 +11,7 @@ import Combine
 final class AppCoordinator: ObservableObject {
     @Published var path = NavigationPath()
     
-    func showWorkoutDetails(_ workout: WorkoutEvent) {
-        path.append(workout)
+    func showWorkoutDetails(_ workoutKey: String) {
+        path.append(workoutKey)
     }
 }

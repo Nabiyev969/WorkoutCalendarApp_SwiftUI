@@ -63,13 +63,13 @@ struct CalendarView: View {
             
             List(viewModel.workoutsForSelectedDay()) { workout in
                 Button {
-                    coordinator.showWorkoutDetails(workout)
+                    coordinator.showWorkoutDetails(workout.workoutKey)
                 } label: {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(workout.title ?? "")
+                        Text(workout.workoutActivityType)
                             .font(.headline)
                         
-                        Text("\(workout.type ?? "") • \(workout.duration ?? 0) min • \(workout.distance ?? 0, specifier: "%.1f") km")
+                        Text(workout.startDate.formatted(date: .omitted, time: .shortened))
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -78,8 +78,8 @@ struct CalendarView: View {
             }
         }
         .listStyle(.plain)
-        .navigationDestination(for: WorkoutEvent.self) { workout in
-            WorkoutDetailsView(workout: workout)
+        .navigationDestination(for: String.self) { key in
+            WorkoutDetailsView(workoutKey: key)
         }
     }
 }
